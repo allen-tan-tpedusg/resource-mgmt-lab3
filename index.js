@@ -11,6 +11,9 @@ app.use(bodyParser.json());
 // Serve static files from the "public" directory
 app.use(express.static('./public'));
 
+const { viewResources } = require('./utils/ViewResourceUtil')
+app.get('/view-resources', viewResources) 
+
 // Serve the start page at the root URL
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/public/' + startPage);
