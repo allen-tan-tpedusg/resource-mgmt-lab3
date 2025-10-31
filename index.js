@@ -13,6 +13,8 @@ app.use(express.static('./public'));
 
 const { addResource } = require('./utils/AddResourceUtil')
 app.post('/add-resource', addResource);
+const { viewResources } = require('./utils/ViewResourceUtil')
+app.get('/view-resources', viewResources) 
 
 // Serve the start page at the root URL
 app.get('/', (req, res) => {
